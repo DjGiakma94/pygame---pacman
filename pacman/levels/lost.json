@@ -1,0 +1,27 @@
+{
+    "window": {
+        "width": 700,
+        "height": 490,
+        "title": "Pacman"
+    },
+    "gameMode": {
+        "type": "pacman.gamemodes.Menu",
+        "screen": "lost"
+    },
+    "actors": [{
+        "name": "background",
+        "x": 0,
+        "y": 0,
+        "components": [{
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/pacman-game-over.png",
+                "ghostBlue": "pacman/assets/img/pacman-game-over.png"
+            },
+            {
+                "name": "controller",
+                "type": "pacman.components.MenuControllerComponent"
+            }
+        ]
+    }]
+}

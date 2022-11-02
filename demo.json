@@ -1,0 +1,122 @@
+{
+    "window" : {
+        "width" : 800,
+        "height" : 800,
+        "title" : "Pacman-clone demo"
+    },
+    "actors" : 
+    [
+        {
+            "name" : "Vagabondo",
+            "x" : 0,
+            "y" : 0,
+            "components" :
+            [
+                {
+                    "name": "sprite",
+                    "type": "engine.components.StaticSpriteComponent",
+                    "fileName": "assets/ghost1.png"
+                },
+                {
+                    "name": "pathcomponent",
+                    "type": "engine.components.PathMovementComponent",
+                    "path" : [
+                        {"x": 100, "y" : 100, "time": 2},
+                        {"x": 140, "y" : 500, "time": 2},
+                        {"x": 500, "y" : 400, "time": 1.3},
+                        {"x": 700, "y" : 300, "time": 6}
+                    ]
+                }
+            ]
+        },
+        {
+            "name" : "Gino",
+            "x" : 0,
+            "y" : 0,
+            "components" :
+            [
+                {
+                    "name": "sprite",
+                    "type": "engine.components.StaticSpriteComponent",
+                    "fileName": "assets/ghost1.png"
+                },
+                {
+                    "name": "floating",
+                    "type": "engine.components.FloatingMovementComponent"
+                },
+                {
+                    "name": "collision1",
+                    "type": "engine.components.ColliderComponent",
+                    "AABB": {
+                        "x": 0,
+                        "y": 0,
+                        "width": 64,
+                        "height": 64
+                    }
+                }
+            ]
+        },
+        {
+            "name" : "Pino",
+            "x" : 200,
+            "y" : 200,
+            "components" :
+            [
+                {
+                    "name": "sprite",
+                    "type": "engine.components.StaticSpriteComponent",
+                    "fileName": "assets/ghost2.png"
+                },
+                {
+                    "name": "bouncing",
+                    "type": "engine.components.BouncingMovementComponent",
+                    "boundingRect": {
+                        "x" : 0,
+                        "y" : 0,
+                        "width" : 500,
+                        "height" : 600
+                    },
+                    "vx" : 100,
+                    "vy" : 50
+                },
+                {
+                    "name": "collision2",
+                    "type": "engine.components.ColliderComponent",
+                    "AABB": {
+                        "x": 0,
+                        "y": 0,
+                        "width": 64,
+                        "height": 64
+                    }
+                }
+            ]
+        },
+        {
+            "name" : "Franco",
+            "x" : 100,
+            "y" : 100,
+            "components" :
+            [
+                {
+                    "name": "sprite",
+                    "type": "engine.components.StaticSpriteComponent",
+                    "fileName": "assets/ghost3.png"
+                },
+                {
+                    "name": "bouncing",
+                    "type": "engine.components.BouncingMovementComponent",
+                    "boundingRect": {
+                        "x" : 0,
+                        "y" : 0,
+                        "width" : 500,
+                        "height" : 600
+                    },
+                    "vx" : -150,
+                    "vy" : 200
+                }
+            ]
+        }
+
+    ]
+
+}

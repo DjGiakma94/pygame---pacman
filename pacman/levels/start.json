@@ -1,0 +1,27 @@
+{
+    "window": {
+        "width": 500,
+        "height": 550,
+        "title": "Pac-man"
+    },
+    "gameMode": {
+        "type": "pacman.gamemodes.Menu",
+        "screen": "start"
+    },
+    "actors": [{
+        "name": "background",
+        "x": 0,
+        "y": 120,
+        "components": [{
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/start.png",
+                "ghostBlue": "pacman/assets/img/ghostLose.png"
+            },
+            {
+                "name": "controller",
+                "type": "pacman.components.MenuControllerComponent"
+            }
+        ]
+    }]
+}

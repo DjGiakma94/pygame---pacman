@@ -1,0 +1,1020 @@
+{
+    "window": {
+        "width": 400,
+        "height": 650,
+        "title": "Pacman"
+    },
+    "gameMode": {
+        "type": "pacman.gamemodes.GamePlay",
+        "lives": 1
+    },
+    "actors": [{
+            "name": "ghost",
+            "x": 50,
+            "y": 150,
+            "type": "pacman.actors.Ball",
+            "components": [{
+                    "name": "movement-ghost",
+                    "type": "pacman.components.BallMovementComponent",
+                    "speed": 30,
+                    "AABB": { "x": 0, "y": 0, "width": 30, "height": 30 }
+                },
+                {
+                    "name": "ghost-coll",
+                    "type": "engine.components.ColliderComponent",
+                    "AABB": { "x": 1, "y": 1, "width": 30, "height": 30 }
+                },
+                {
+                    "name": "sprite",
+                    "type": "engine.components.StaticSpriteComponent",
+                    "fileName": "pacman/assets/img/ghost1.png",
+                    "ghostBlue": "pacman/assets/img/ghostLose.png"
+                }
+            ]
+        },
+        {
+            "name": "ghost",
+            "x": 530,
+            "y": 300,
+            "type": "pacman.actors.Ball",
+            "components": [{
+                    "name": "movement-ghost",
+                    "type": "pacman.components.BallMovementComponent",
+                    "speed": 30,
+                    "AABB": { "x": 0, "y": 0, "width": 30, "height": 30 }
+                },
+                {
+                    "name": "ghost-coll",
+                    "type": "engine.components.ColliderComponent",
+                    "AABB": { "x": 1, "y": 1, "width": 30, "height": 30 }
+                },
+                {
+                    "name": "sprite",
+                    "type": "engine.components.StaticSpriteComponent",
+                    "fileName": "pacman/assets/img/ghost3.png",
+                    "ghostBlue": "pacman/assets/img/ghostLose.png"
+
+                }
+            ]
+        },
+        {
+            "name": "red",
+            "x": 300,
+            "y": 42,
+            "components": [{
+                    "name": "red1",
+                    "type": "engine.components.ColliderComponent",
+                    "AABB": { "x": 1, "y": 1, "width": 30, "height": 30 }
+                },
+                {
+                    "name": "sprite",
+                    "type": "engine.components.StaticSpriteComponent",
+                    "fileName": "pacman/assets/img/red.png",
+                    "ghostBlue": "pacman/assets/img/red.png"
+                }
+
+            ]
+        },
+        {
+            "name": "red2",
+            "x": 202,
+            "y": 302,
+            "components": [{
+                    "name": "red2",
+                    "type": "engine.components.ColliderComponent",
+                    "AABB": { "x": 1, "y": 1, "width": 30, "height": 30 }
+                },
+                {
+                    "name": "sprite",
+                    "type": "engine.components.StaticSpriteComponent",
+                    "fileName": "pacman/assets/img/red.png",
+                    "ghostBlue": "pacman/assets/img/red.png"
+                }
+
+            ]
+        },
+        {
+            "name": "Player",
+            "x": 42,
+            "y": 42,
+            "components": [{
+                    "name": "sprite",
+                    "type": "engine.components.AnimatedSpriteComponent",
+                    "pingPong": true,
+                    "frames": [
+                        { "fileName": "pacman/assets/img/pacman_open.png", "duration": 0.1 },
+                        { "fileName": "pacman/assets/img/pacman_close.png", "duration": 0.1 }
+
+                    ]
+
+                },
+                {
+                    "name": "movement-player",
+                    "type": "pacman.components.PlayerMovementComponent",
+                    "speed": 150,
+                    "inertia": 400,
+                    "AABB": { "x": 0, "y": 0, "width": -329, "height": -570 }
+                },
+                {
+                    "name": "collision-player",
+                    "type": "engine.components.ColliderComponent",
+                    "AABB": { "x": 1, "y": 1, "width": 28, "height": 28 }
+                }
+            ]
+        },
+
+        {
+            "name": "brick",
+            "x": 0,
+            "y": 0,
+
+            "components": [{
+                    "name": "collision",
+                    "type": "engine.components.ColliderComponent",
+                    "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 }
+                },
+                {
+                    "name": "sprite",
+                    "type": "engine.components.StaticSpriteComponent",
+                    "fileName": "pacman/assets/img/blu_square.png",
+                    "ghostBlue": "pacman/assets/img/blu_square.png"
+                }
+            ]
+        },
+        {
+            "name": "brick",
+            "x": 40,
+            "y": 0,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 80,
+            "y": 0,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 120,
+            "y": 0,
+            "components": [{
+                    "name": "collision",
+                    "type": "engine.components.ColliderComponent",
+                    "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 }
+                },
+                {
+                    "name": "sprite",
+                    "type": "engine.components.StaticSpriteComponent",
+                    "fileName": "pacman/assets/img/blu_square.png",
+                    "ghostBlue": "pacman/assets/img/blu_square.png"
+                }
+            ]
+        },
+        {
+            "name": "brick",
+            "x": 160,
+            "y": 0,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 200,
+            "y": 0,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 240,
+            "y": 0,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 280,
+            "y": 0,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 320,
+            "y": 0,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 360,
+            "y": 0,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 0,
+            "y": 40,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 360,
+            "y": 40,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 0,
+            "y": 80,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 80,
+            "y": 80,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 160,
+            "y": 80,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 240,
+            "y": 80,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 280,
+            "y": 80,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 360,
+            "y": 80,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 0,
+            "y": 120,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 80,
+            "y": 120,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 280,
+            "y": 120,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 360,
+            "y": 120,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 0,
+            "y": 160,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 80,
+            "y": 160,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 120,
+            "y": 160,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 200,
+            "y": 160,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 280,
+            "y": 160,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 360,
+            "y": 160,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 0,
+            "y": 200,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 360,
+            "y": 200,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 0,
+            "y": 240,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 80,
+            "y": 240,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 160,
+            "y": 240,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 240,
+            "y": 240,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 280,
+            "y": 240,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 360,
+            "y": 240,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 0,
+            "y": 280,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 160,
+            "y": 280,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 360,
+            "y": 280,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 0,
+            "y": 320,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 80,
+            "y": 320,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 160,
+            "y": 320,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 240,
+            "y": 320,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 280,
+            "y": 320,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 360,
+            "y": 320,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 0,
+            "y": 360,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 360,
+            "y": 360,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 0,
+            "y": 400,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 80,
+            "y": 400,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 120,
+            "y": 400,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 160,
+            "y": 400,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 240,
+            "y": 400,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 280,
+            "y": 400,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 360,
+            "y": 400,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 0,
+            "y": 440,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 80,
+            "y": 440,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 240,
+            "y": 440,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 280,
+            "y": 440,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 360,
+            "y": 440,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 0,
+            "y": 480,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 160,
+            "y": 480,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 360,
+            "y": 480,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 0,
+            "y": 520,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 80,
+            "y": 520,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 160,
+            "y": 520,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 240,
+            "y": 520,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 280,
+            "y": 520,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 360,
+            "y": 520,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 0,
+            "y": 560,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 360,
+            "y": 560,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 0,
+            "y": 600,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 40,
+            "y": 600,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 80,
+            "y": 600,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 120,
+            "y": 600,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 160,
+            "y": 600,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 200,
+            "y": 600,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 240,
+            "y": 600,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 280,
+            "y": 600,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 320,
+            "y": 600,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        },
+        {
+            "name": "brick",
+            "x": 360,
+            "y": 600,
+            "components": [{ "name": "collision", "type": "engine.components.ColliderComponent", "AABB": { "x": 0, "y": 0, "width": 40, "height": 40 } }, {
+                "name": "sprite",
+                "type": "engine.components.StaticSpriteComponent",
+                "fileName": "pacman/assets/img/blu_square.png",
+                "ghostBlue": "pacman/assets/img/blu_square.png"
+            }]
+        }
+    ]
+}
